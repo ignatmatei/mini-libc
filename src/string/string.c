@@ -5,24 +5,42 @@
 char *strcpy(char *destination, const char *source)
 {
 	/* TODO: Implement strcpy(). */
+	char *p = source;
+	int i = 0;
+	while(*(p + i) != NULL){
+		*(destination + i) = *(p + i);
+		i++;
+	}
 	return destination;
 }
 
 char *strncpy(char *destination, const char *source, size_t len)
 {
 	/* TODO: Implement strncpy(). */
+	char *p = source;
+	int i = 0 , j = 0;
+	while(i < len){
+		*(destination + i) = *(p + j);
+		i++;
+		if(*(p + j) != NULL)
+		 j++;
+	}
 	return destination;
 }
 
 char *strcat(char *destination, const char *source)
 {
 	/* TODO: Implement strcat(). */
+	int length = strlen(destination);
+	strcpy((destination + length), source);
 	return destination;
 }
 
 char *strncat(char *destination, const char *source, size_t len)
 {
 	/* TODO: Implement strncat(). */
+	int length = strlen(destination);
+	strncpy((destination + length), source, len);
 	return destination;
 }
 
@@ -44,7 +62,7 @@ size_t strlen(const char *str)
 
 	for (; *str != '\0'; str++, i++)
 		;
-
+ 
 	return i;
 }
 
