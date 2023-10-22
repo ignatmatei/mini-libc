@@ -47,13 +47,25 @@ char *strncat(char *destination, const char *source, size_t len)
 int strcmp(const char *str1, const char *str2)
 {
 	/* TODO: Implement strcmp(). */
-	return -1;
+	int i = 0;
+    while(*(str1 + i) != NULL  && *(str2 + i) != NULL){
+		if(*(str1 + i) != *(str2 + i))
+		 return(*(str1 + i) - *(str2) + i);
+		i++;
+	}
+	return 0;
 }
 
 int strncmp(const char *str1, const char *str2, size_t len)
 {
 	/* TODO: Implement strncmp(). */
-	return -1;
+	int i = 0;
+    while(*(str1 + i) != NULL  && *(str2 + i) != NULL && i < len){
+		if(*(str1 + i) != *(str2 + i))
+		 return(*(str1 + i) - *(str2) + i);
+		i++;
+	}
+	return 0;
 }
 
 size_t strlen(const char *str)
@@ -69,12 +81,22 @@ size_t strlen(const char *str)
 char *strchr(const char *str, int c)
 {
 	/* TODO: Implement strchr(). */
+	for(int i = 0; i < strlen(str); i++)
+	 if(*(str + i) == c)
+	  return str + i;
 	return NULL;
 }
 
 char *strrchr(const char *str, int c)
 {
 	/* TODO: Implement strrchr(). */
+	int poz = 0;
+	for(int i = 0; i < strlen(str);i++){
+		if(*(str + i) == c)
+		 poz = i;
+	}
+	if(poz)
+	 return str + poz;
 	return NULL;
 }
 
