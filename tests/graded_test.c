@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
-
-#include <string.h>
+//#include <string.h>
+#include "../src/string/string.h"
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -55,7 +55,10 @@ static void print_test(const char *description, int result, size_t points)
 	size_t len;
 
 	/* Collect description in print_buffer. */
-	len = MIN(strlen(description), 32);
+	//len = MIN(strlen(description), 32);
+	len = 32;
+	if(len > strlen(description))
+	 len = strlen(description);
 	for (i = 0; i < len; i++)
 		print_buffer[i] = description[i];
 	for (i = len; i < 32; i++)

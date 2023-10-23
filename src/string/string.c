@@ -1,28 +1,28 @@
 // SPDX-License-Identifier: BSD-3-Clause
-
-#include <string.h>
+ #include "./string.h"
 
 char *strcpy(char *destination, const char *source)
 {
 	/* TODO: Implement strcpy(). */
-	char *p = source;
-	int i = 0;
-	while(*(p + i) != NULL){
-		*(destination + i) = *(p + i);
-		i++;
+	while(*source)
+	{
+		*destination = *source;
+		source ++;
+		destination ++;
 	}
+	*destination = *source;
 	return destination;
 }
 
 char *strncpy(char *destination, const char *source, size_t len)
 {
 	/* TODO: Implement strncpy(). */
-	char *p = source;
+	const char *p = source;
 	int i = 0 , j = 0;
 	while(i < len){
 		*(destination + i) = *(p + j);
 		i++;
-		if(*(p + j) != NULL)
+		if(*(p + j))
 		 j++;
 	}
 	return destination;
@@ -48,11 +48,15 @@ int strcmp(const char *str1, const char *str2)
 {
 	/* TODO: Implement strcmp(). */
 	int i = 0;
-    while(*(str1 + i) != NULL  && *(str2 + i) != NULL){
+    while(*(str1 + i)  || *(str2 + i) ){
 		if(*(str1 + i) != *(str2 + i))
 		 return(*(str1 + i) - *(str2) + i);
 		i++;
 	}
+	if(!(str1 + i) && (str2 + i))
+	 return -1;
+	if((str1 + i) && !(str2 + i))
+	 return 1;
 	return 0;
 }
 
@@ -60,13 +64,13 @@ int strncmp(const char *str1, const char *str2, size_t len)
 {
 	/* TODO: Implement strncmp(). */
 	int i = 0;
-    while(*(str1 + i) != NULL  && *(str2 + i) != NULL && i < len){
+    while(*(str1 + i) && *(str2 + i)  && i < len){
 		if(*(str1 + i) != *(str2 + i))
 		 return(*(str1 + i) - *(str2) + i);
 		i++;
 	}
 	return 0;
-}
+}	
 
 size_t strlen(const char *str)
 {
@@ -103,35 +107,97 @@ char *strrchr(const char *str, int c)
 char *strstr(const char *haystack, const char *needle)
 {
 	/* TODO: Implement strstr(). */
-	return NULL;
+	//credit : ChatGPT
+	while (*haystack) {
+        const char *h = haystack;
+        const char *n = needle;
+        
+        while (*haystack && *n && *haystack == *n) {
+            haystack++;
+            n++;
+        }
+        
+        if (!*n) {
+            return (char *)h;  // Found a match, return a pointer to the start of the match.
+        }
+        
+        haystack = h + 1;  // No match, increment the haystack pointer.
+    }
+    
+    return NULL; 
 }
 
 char *strrstr(const char *haystack, const char *needle)
 {
 	/* TODO: Implement strrstr(). */
+	int haystack_len = strlen(haystack);
+    int needle_len = strlen(needle);
+    
+    if (needle_len == 0) {
+        return (char *)(haystack + haystack_len);
+    }
+
+    for (int i = haystack_len - needle_len; i >= 0; i--) {
+        if (strncmp(haystack + i, needle, needle_len) == 0) {
+            return (char *)(haystack + i);
+        }
+    }
+
 	return NULL;
 }
 
 void *memcpy(void *destination, const void *source, size_t num)
 {
 	/* TODO: Implement memcpy(). */
-	return destination;
+	unsigned char* d = (unsigned char*) destination;
+    const unsigned char* s = (const unsigned char*) source;
+
+     for (size_t i = 0; i < num; i++) {
+        d[i] = s[i];
+    }
+    return destination;
 }
 
 void *memmove(void *destination, const void *source, size_t num)
 {
 	/* TODO: Implement memmove(). */
+			unsigned char* d = (unsigned char*) destination;
+    const unsigned char* s = (const unsigned char*) source;
+	 if (s < d && s + num > d) {
+        // Source and destination overlap, copy from end to start
+        for (size_t i = num; i > 0; i--) {
+            d[i - 1] = s[i - 1];
+        }
+    } else {
+        // Source and destination don't overlap, copy from start to end
+        for (size_t i = 0; i < num; i++) {
+            d[i] = s[i];
+        }
+    }
 	return destination;
 }
 
 int memcmp(const void *ptr1, const void *ptr2, size_t num)
 {
 	/* TODO: Implement memcmp(). */
-	return -1;
+	const unsigned char* p1 = ptr1;
+    const unsigned char* p2 = ptr2;
+
+    for (size_t i = 0; i < num; i++) {
+        if (p1[i] < p2[i]) {
+            return -1;
+        } else if (p1[i] > p2[i]) {
+            return 1;
+        }
+    }
+    
+    return 0;
 }
 
 void *memset(void *source, int value, size_t num)
 {
 	/* TODO: Implement memset(). */
+	unsigned char *s = source;
+	for (; num; num--, s++) *s = value;
 	return source;
 }
