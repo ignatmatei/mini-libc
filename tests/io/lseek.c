@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <stdlib.h>
+#include "../../src/include/stdlib.h"
 #include <unistd.h>
 #include <fcntl.h>
-#include <errno.h>
-
+#include "../../src/include/errno.h"
+#include "../../src/include/internal/io.h"
 #define EXISTENT_FILE	"./existent_file"
 #define FILE_SIZE	20
 
@@ -17,23 +17,30 @@ int main(void)
 
 	fd = open(EXISTENT_FILE, 0, 0);
 	if (fd < 0)
+	{
+		write(1,"a" ,1);
 		exit(EXIT_FAILURE);
-
+	}
+     
 	offset = lseek(fd, 10, SEEK_SET);
 	if (offset != 10)
-		exit(EXIT_FAILURE);
+		{
+			exit(EXIT_FAILURE);
+		}
 
 	offset = lseek(fd, 10, SEEK_CUR);
-	if (offset != 20)
+	if (offset != 20) 
+	{
 		exit(EXIT_FAILURE);
+	}
 
 	offset = lseek(fd, 10, SEEK_END);
 	if (offset != 30)
+	{
 		exit(EXIT_FAILURE);
-
+	}
 	r = close(fd);
 	if (r < 0)
 		exit(EXIT_FAILURE);
-
 	return 0;
 }

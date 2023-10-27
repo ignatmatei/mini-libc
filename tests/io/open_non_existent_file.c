@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <stdlib.h>
+#include "../../src/include/stdlib.h"
 #include <unistd.h>
 #include <fcntl.h>
-#include <errno.h>
-
+#include "../../src/include/internal/io.h"
+#include "../../src/include/errno.h"
 #define NON_EXISTENT_FILE "./non_existent_file"
 
 /* File doesn't exist, open should fail and errno should be set to -ENOENT. */
@@ -14,7 +14,8 @@ int main(void)
 
 	fd = open(NON_EXISTENT_FILE, 0, 0);
 	if (fd != -1 || errno != -ENOENT)
-		exit(EXIT_FAILURE);
-
+		{ 
+			exit(EXIT_FAILURE);
+		}
 	return 0;
 }
