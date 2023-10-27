@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <stdlib.h>
+#include "../../src/include/stdlib.h"
 #include <unistd.h>
 #include <fcntl.h>
-
+#include "../../src/include/internal/io.h"
 #define EXISTENT_FILE "./existent_file"
 
 /* File exists, open call should succeed. */

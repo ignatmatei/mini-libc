@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#include <internal/arch/x86_64/syscall_list.h>
+#include "arch/x86_64/syscall_list.h"
 
 long syscall(long n, ...);
 

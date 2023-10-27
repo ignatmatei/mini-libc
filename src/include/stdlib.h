@@ -7,8 +7,8 @@
 extern "C" {
 #endif
 
-#include <internal/types.h>
-#include <internal/essentials.h>
+#include "internal/types.h"
+#include "internal/essentials.h"
 
 #define EXIT_SUCCESS	0
 #define EXIT_FAILURE	1
