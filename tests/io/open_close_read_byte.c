@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <stdlib.h>
+#include "../../src/include/stdlib.h"
 #include <unistd.h>
 #include <fcntl.h>
-#include <errno.h>
+//#include <errno.h>
+#include "../../src/include/internal/io.h"
 
 #define EXISTENT_FILE	"./existent_file"
 
@@ -14,12 +15,14 @@ int main(void)
 	int r;
 	char buffer[128];
 	int n;
-
+  
 	fd = open(EXISTENT_FILE, 0, 0);
+	
 	if (fd < 0)
 		exit(EXIT_FAILURE);
 
 	n = read(fd, buffer, 128);
+	;
 	if (n < 0)
 		exit(EXIT_FAILURE);
 

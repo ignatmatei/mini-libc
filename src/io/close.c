@@ -3,11 +3,13 @@
 #include <unistd.h>
 #include "../include/internal/syscall.h"
 #include <stdarg.h>
-#include <errno.h>
+#include "../include/errno.h"
 
 int close(int fd)
 {
 	/* TODO: Implement close(). */
-	return syscall(__NR_close, fd);
-	//return -1;
+	errno = - syscall(__NR_close, fd);
+	if(errno)
+	return -1;
+	return 0;
 }

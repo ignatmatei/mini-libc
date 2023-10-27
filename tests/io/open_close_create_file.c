@@ -19,6 +19,5 @@ int main(void)
 	r = close(fd);
 	if (r < 0)
 		exit(EXIT_FAILURE);
-
 	return 0;
 }
