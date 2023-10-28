@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <unistd.h>
+#include "../include/unistd.h"
 #include "../include/internal/syscall.h"
 #include "../include/errno.h"
-#include <fcntl.h>
+#include "../include/fcntl.h"
 
 off_t lseek(int fd, off_t offset, int whence)
 {

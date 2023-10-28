@@ -7,8 +7,8 @@
 extern "C" {
 #endif
 
-#include <internal/io.h>
-#include <internal/types.h>
+#include "internal/io.h"
+#include "internal/types.h"
 
 #define SEEK_SET 0
 #define SEEK_CUR 1

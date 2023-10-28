@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "syscall.h": "c",
+        "string.h": "c",
+        "graded_test.h": "c",
+        "fcntl.h": "c",
+        "cstdlib": "c",
+        "stdlib.h": "c",
+        "stat.h": "c",
+        "io.h": "c"
+    }
+}

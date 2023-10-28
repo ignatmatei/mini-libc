@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#include <internal/types.h>
+#include "internal/types.h"
 
 #define O_ACCMODE		0003
 #define O_RDONLY		00

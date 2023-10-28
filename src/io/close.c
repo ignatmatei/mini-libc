@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <unistd.h>
+#include "../include/unistd.h"
 #include "../include/internal/syscall.h"
-#include <stdarg.h>
+#include "../include/stdarg.h"
 #include "../include/errno.h"
 
 int close(int fd)

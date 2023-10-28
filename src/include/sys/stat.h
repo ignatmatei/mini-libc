@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#include <internal/types.h>
+#include "../internal/types.h"
 
 /*
  * These bits should be set in the mask argument of statx() to request

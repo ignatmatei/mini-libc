@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-
+#include "../../src/include/stdlib.h"
+#include "../../src/include/unistd.h"
+#include "../../src/include/fcntl.h"
+#include "../../src/include/internal/io.h"
 #define EXISTENT_FILE	"./existent_file"
 #define FILE_SIZE	20
 
@@ -15,6 +15,5 @@ int main(void)
 	r = truncate(EXISTENT_FILE, FILE_SIZE);
 	if (r < 0)
 		exit(EXIT_FAILURE);
-
 	return 0;
 }

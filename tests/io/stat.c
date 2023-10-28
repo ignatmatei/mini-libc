@@ -1,12 +1,13 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <internal/types.h>
-#include <sys/stat.h>
-#include <string.h>
+#include "../../src/include/stdlib.h"
+#include "../../src/include/unistd.h"
+#include "../../src/include/fcntl.h"
+#include "../../src/include/errno.h"
+#include "../../src/include/internal/types.h"
+#include "../../src/include/sys/stat.h"
+#include "../../src/string/string.h"
+#include "../../src/include/internal/io.h"
 
 #define EXISTENT_FILE	"./existent_file"
 

@@ -2,8 +2,8 @@
 
 //#include <stdlib.h>
 #include "../../src/include/stdlib.h"
-#include <unistd.h>
-#include <fcntl.h>
+#include "../../src/include/unistd.h"
+#include "../../src/include/fcntl.h"
 #include "../../src/include/internal/io.h"
 #define CREATE_FILE	"./create_file"
 

@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
 #include "../../src/include/stdlib.h"
-#include <unistd.h>
-#include <fcntl.h>
+#include "../../src/include/unistd.h"
+#include "../../src/include/fcntl.h"
 //#include <errno.h>
 #include "../../src/include/internal/io.h"
 

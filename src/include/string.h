@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#include <internal/types.h>
+#include "internal/types.h"
 
 char *strcpy(char *destination, const char *source);
 char *strncpy(char *destination, const char *source, size_t len);
