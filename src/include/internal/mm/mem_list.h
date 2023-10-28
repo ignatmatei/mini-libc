@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#include <internal/types.h>
+#include "../internal/types.h"
 
 struct mem_list {
 	void *start;

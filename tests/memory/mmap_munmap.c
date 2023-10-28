@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <stdlib.h>
-#include <sys/mman.h>
-#include <unistd.h>
+#include "../../src/include/stdlib.h"
+#include "../../src/include/sys/mman.h"
+#include "../../src/include/unistd.h"
 
 #define		ALLOC_SIZE	(4 * 1024 * 1024)
 #define		INFINITE	1000000

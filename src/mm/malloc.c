@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <internal/mm/mem_list.h>
-#include <internal/types.h>
-#include <internal/essentials.h>
-#include <sys/mman.h>
-#include <string.h>
-#include <stdlib.h>
+#include  "../include/internal/mm/mem_list.h"
+#include "../include/internal/types.h"
+#include "../include/internal/essentials.h"
+#include "../include/sys/mman.h"
+#include "../include/string.h"
+#include "../include/stdlib.h"
 
 void *malloc(size_t size)
 {

@@ -1,12 +1,15 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <sys/mman.h>
-#include <errno.h>
-#include <internal/syscall.h>
+#include "../include/sys/mman.h"
+#include "../include/errno.h"
+#include "../include/internal/syscall.h"
 
 void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)
 {
 	/* TODO: Implement mmap(). */
+	errno = - syscall (__NR_mmap, addr , length , prot, flags, fd, offset);
+	 if(! errno)
+	  return errno;
 	return MAP_FAILED;
 }
 

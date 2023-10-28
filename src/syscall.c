@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
-
-#include <internal/arch/x86_64/syscall_arch.h>
-#include <stdarg.h>
+#include "internal/arch/x86_64/syscall_arch.h"
+#include "stdarg.h"
 
 long syscall(long num, ...)
 {
