@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <stdlib.h>
-#include <sys/mman.h>
-#include <unistd.h>
+#include "../../src/include/stdlib.h"
+#include "../../src/include/sys/mman.h"
+#include "../../include/unistd.h"
 
 #define		ALLOC_SIZE	(4 * 1024 * 1024)
 #define		INFINITE	1000000
@@ -16,8 +16,8 @@ int main(void)
 	p = mmap(NULL, ALLOC_SIZE, PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
 	if (p == MAP_FAILED)
 		exit(EXIT_FAILURE);
-
-	sleep(INFINITE);
+	printf("greseala"); 
+	//sleep(INFINITE);
 
 	return 0;
 }

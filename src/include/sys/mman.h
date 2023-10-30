@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#include <internal/types.h>
+#include "../internal/types.h"
 
 #define PROT_READ	0x1		/* Page can be read.  */
 #define PROT_WRITE	0x2		/* Page can be written.  */

@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#include "../internal/types.h"
+#include "../types.h"
 
 struct mem_list {
 	void *start;
@@ -24,7 +24,6 @@ struct mem_list *mem_list_find(void *start);
 int mem_list_del(void *start);
 void mem_list_cleanup(void);
 size_t mem_list_num_items(void);
-
 #ifdef __cplusplus
 }
 #endif

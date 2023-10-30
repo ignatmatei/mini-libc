@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <internal/mm/mem_list.h>
-#include <internal/types.h>
-#include <sys/mman.h>
+#include "../include/internal/mm/mem_list.h"
+#include "../include/internal/types.h"
+#include "../include/sys/mman.h"
 
 struct mem_list mem_list_head;
 
