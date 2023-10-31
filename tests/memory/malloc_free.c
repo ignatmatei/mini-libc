@@ -14,8 +14,9 @@ int main(void)
 	p = malloc(ALLOC_SIZE);
 	if (p == NULL)
 		exit(EXIT_FAILURE);
+	//write(1,"a",1);
 	free(p);
-
+	//write(1,"b",1);
 	sleep(INFINITE);
 
 	return 0;

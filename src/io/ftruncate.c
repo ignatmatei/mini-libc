@@ -8,8 +8,9 @@
 int ftruncate(int fd, off_t length)
 {
 	/* TODO: Implement ftruncate(). */
-	errno = - syscall(__NR_ftruncate , fd , length);
-	if(!errno)
+	long int x = - syscall(__NR_ftruncate , fd , length);
+	if(!x)
 	return 0;
+	errno = x;
 	return -1;
 }

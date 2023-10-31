@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <errno.h>
+#include "../src/include/stdlib.h"
+#include "../src/include/unistd.h"
+#include "../src/include/fcntl.h"
+#include "../src/include/sys/stat.h"
+#include "../src/include/errno.h"
 
 #include "./graded_test.h"
 
@@ -280,7 +280,8 @@ static int test_ftruncate_read_only_file(void)
 	fd = close(fd);
 	if (fd < 0)
 		return 0;
-
+	//write(1,"a",1);
+	//my_itoa(errno, &print_buffer[0]);
 	return r == -1 && (errno == EINVAL || errno == EBADF);
 }
 

@@ -18,7 +18,7 @@ char *strncpy(char *destination, const char *source, size_t len)
 {
 	/* TODO: Implement strncpy(). */
 	const char *p = source;
-	int i = 0 , j = 0;
+	unsigned int i = 0 , j = 0;
 	while(i < len){
 		*(destination + i) = *(p + j);
 		i++;
@@ -63,7 +63,7 @@ int strcmp(const char *str1, const char *str2)
 int strncmp(const char *str1, const char *str2, size_t len)
 {
 	/* TODO: Implement strncmp(). */
-	int i = 0;
+	unsigned int i = 0;
     while (*(str1 + i) && *(str2 + i)  && i < len){
 		if(*(str1 + i) != *(str2 + i))
 		 return(*(str1 + i) - *(str2) + i);
@@ -84,7 +84,7 @@ size_t strlen(const char *str)
 char *strchr(const char *str, int c)
 {
 	/* TODO: Implement strchr(). */
-	for(int i = 0; i < strlen(str); i++)
+	for(unsigned int i = 0; i < strlen(str); i++)
 	 if (*(str + i) == c)
 	  return str + i;
 	return NULL;
@@ -94,7 +94,7 @@ char *strrchr(const char *str, int c)
 {
 	/* TODO: Implement strrchr(). */
 	int poz = 0;
-	for(int i = 0; i < strlen(str);i++){
+	for(unsigned int i = 0; i < strlen(str);i++){
 		if(*(str + i) == c)
 		 poz = i;
 	}

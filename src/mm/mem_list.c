@@ -75,13 +75,10 @@ static struct mem_list *mem_list_extract(void *start)
 int mem_list_del(void *start)
 {
 	struct mem_list *item;
-
 	item = mem_list_extract(start);
 	if (item == NULL)
 		return -1;
-
 	mem_list_free(item);
-
 	return 0;
 }
 

@@ -9,6 +9,7 @@
         "stat.h": "c",
         "io.h": "c",
         "errno.h": "c",
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "mman.h": "c"
     }
 }

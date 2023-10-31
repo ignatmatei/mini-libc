@@ -46,7 +46,9 @@ void *calloc(size_t nmemb, size_t size)
 void free(void *ptr)
 {
 	/* TODO: Implement free(). */
-	mem_list_del(ptr);
+    if (!ptr)
+        return;
+    mem_list_del(ptr);
     munmap(ptr, sizeof(struct mem_list));
 }
 

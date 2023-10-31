@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include <string.h>
-#include <stdlib.h>
-#include <sys/mman.h>
-#include <errno.h>
+#include "../src/include/string.h"
+#include "../src/include/stdlib.h"
+#include "../src/include/sys/mman.h"
+#include "../src/include/errno.h"
 
 #include "./graded_test.h"
 
