@@ -12,6 +12,7 @@ int main(void)
 {
 	int fd;
 	int r;
+
 	fd = open(CREATE_FILE, O_CREAT, S_IWUSR | S_IRUSR | S_IWGRP | S_IRGRP | S_IROTH);
 	if (fd < 0)
 		exit(EXIT_FAILURE);

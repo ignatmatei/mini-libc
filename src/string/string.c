@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: BSD-3-Clause
- #include "./string.h"
+#include "string.h"
 
 char *strcpy(char *destination, const char *source)
 {
@@ -7,8 +7,8 @@ char *strcpy(char *destination, const char *source)
 	while(*source)
 	{
 		*destination = *source;
-		source ++;
-		destination ++;
+		source++;
+		destination++;
 	}
 	*destination = *source;
 	return destination;
@@ -48,7 +48,7 @@ int strcmp(const char *str1, const char *str2)
 {
 	/* TODO: Implement strcmp(). */
 	int i = 0;
-    while(*(str1 + i)  || *(str2 + i) ){
+    while (*(str1 + i)  || *(str2 + i)) {
 		if(*(str1 + i) != *(str2 + i))
 		 return(*(str1 + i) - *(str2) + i);
 		i++;
@@ -64,13 +64,13 @@ int strncmp(const char *str1, const char *str2, size_t len)
 {
 	/* TODO: Implement strncmp(). */
 	int i = 0;
-    while(*(str1 + i) && *(str2 + i)  && i < len){
+    while (*(str1 + i) && *(str2 + i)  && i < len){
 		if(*(str1 + i) != *(str2 + i))
 		 return(*(str1 + i) - *(str2) + i);
 		i++;
 	}
 	return 0;
-}	
+}
 
 size_t strlen(const char *str)
 {
@@ -78,7 +78,6 @@ size_t strlen(const char *str)
 
 	for (; *str != '\0'; str++, i++)
 		;
- 
 	return i;
 }
 
@@ -86,7 +85,7 @@ char *strchr(const char *str, int c)
 {
 	/* TODO: Implement strchr(). */
 	for(int i = 0; i < strlen(str); i++)
-	 if(*(str + i) == c)
+	 if (*(str + i) == c)
 	  return str + i;
 	return NULL;
 }
@@ -111,20 +110,20 @@ char *strstr(const char *haystack, const char *needle)
 	while (*haystack) {
         const char *h = haystack;
         const char *n = needle;
-        
+
         while (*haystack && *n && *haystack == *n) {
             haystack++;
             n++;
         }
-        
+
         if (!*n) {
             return (char *)h;  // Found a match, return a pointer to the start of the match.
         }
-        
+
         haystack = h + 1;  // No match, increment the haystack pointer.
     }
-    
-    return NULL; 
+
+    return NULL;
 }
 
 char *strrstr(const char *haystack, const char *needle)
@@ -132,7 +131,7 @@ char *strrstr(const char *haystack, const char *needle)
 	/* TODO: Implement strrstr(). */
 	int haystack_len = strlen(haystack);
     int needle_len = strlen(needle);
-    
+
     if (needle_len == 0) {
         return (char *)(haystack + haystack_len);
     }
@@ -190,7 +189,7 @@ int memcmp(const void *ptr1, const void *ptr2, size_t num)
             return 1;
         }
     }
-    
+
     return 0;
 }
 

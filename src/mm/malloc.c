@@ -48,7 +48,6 @@ void free(void *ptr)
 	/* TODO: Implement free(). */
 	mem_list_del(ptr);
     munmap(ptr, sizeof(struct mem_list));
-
 }
 
 void *realloc(void *ptr, size_t size)
@@ -60,7 +59,7 @@ void *realloc(void *ptr, size_t size)
 
     struct mem_list *item = mem_list_find(ptr);
     if (item == NULL) {
-        return NULL; 
+        return NULL;
     }
 
     size_t old_size = item->len;
@@ -80,7 +79,6 @@ void *reallocarray(void *ptr, size_t nmemb, size_t size)
 	/* TODO: Implement reallocarray(). */
 	 size_t total_size = nmemb * size;
     return realloc(ptr, total_size);
-
 }
 
 

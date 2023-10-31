@@ -12,11 +12,8 @@ int main(void)
 	char *p;
 
 	p = mmap(NULL, ALLOC_SIZE, PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
-	if (p == MAP_FAILED) {
-		printf("o nu");
+	if (p == MAP_FAILED)
 		exit(EXIT_FAILURE);
-	}
 	p[0] = 10;
-    printf("succes");
 	return 0;
 }

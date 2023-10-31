@@ -9,7 +9,7 @@ int ftruncate(int fd, off_t length)
 {
 	/* TODO: Implement ftruncate(). */
 	errno = - syscall(__NR_ftruncate , fd , length);
-	if(! errno)
+	if(!errno)
 	return 0;
 	return -1;
 }

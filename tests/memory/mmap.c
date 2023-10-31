@@ -2,7 +2,7 @@
 
 #include "../../src/include/stdlib.h"
 #include "../../src/include/sys/mman.h"
-#include "../../include/unistd.h"
+#include "../../src/include/unistd.h"
 
 #define		ALLOC_SIZE	(4 * 1024 * 1024)
 #define		INFINITE	1000000
@@ -16,8 +16,7 @@ int main(void)
 	p = mmap(NULL, ALLOC_SIZE, PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
 	if (p == MAP_FAILED)
 		exit(EXIT_FAILURE);
-	printf("greseala"); 
-	//sleep(INFINITE);
+	sleep(INFINITE);
 
 	return 0;
 }

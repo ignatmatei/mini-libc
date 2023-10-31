@@ -19,7 +19,6 @@ static int test_strcpy(void)
 	dst[sizeof(src)-1] = 'Z';
 	strcpy(dst, src);
 	len = strlen(dst);
-	
 	return len == (sizeof(src)-1);
 }
 
@@ -464,7 +463,7 @@ static int test_memmove_src_after_dst(void)
 	memset(dst, 'b', 128);
 	memset(src, 'a', 112);
 	memmove(dst, src, 112);
-	return dst[0] == 'a' && dst[1] == 'a';	
+	return dst[0] == 'a' && dst[1] == 'a';
 }
 
 static struct graded_test string_tests[] = {
@@ -503,15 +502,13 @@ static struct graded_test string_tests[] = {
 	{ test_memcmp_diff_contents_equal, "test_memcmp_diff_contents_equal", 9 },
 	{ test_memcmp_diff_size_equal, "test_memcmp_diff_size_equal", 9 },
 	{ test_memset, "test_memset", 9 },
-	//{ test_memset_part, "test_memset_part", 9 },
+	{ test_memset_part, "test_memset_part", 9 },
 	{ test_memmove_apart, "test_memmove_apart", 9 },
 	{ test_memmove_src_before_dst, "test_memmove_src_before_dst", 9 },
 	{ test_memmove_src_after_dst, "test_memmove_src_after_dst", 9 },
-	
 };
 
 int main(void)
-{	run_tests(string_tests, sizeof(string_tests) / sizeof(string_tests[0]));
-
-	return 0;
+{run_tests(string_tests, sizeof(string_tests) / sizeof(string_tests[0]));
+return 0;
 }

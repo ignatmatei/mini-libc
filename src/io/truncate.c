@@ -9,7 +9,7 @@ int truncate(const char *path, off_t length)
 {
 	/* TODO: Implement truncate(). */
 	errno = - syscall(__NR_truncate, path, length);
-	if( ! errno)
+	if(!errno)
 	return 0;
 	return -1;
 }

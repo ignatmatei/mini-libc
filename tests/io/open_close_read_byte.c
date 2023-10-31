@@ -15,9 +15,8 @@ int main(void)
 	int r;
 	char buffer[128];
 	int n;
-  
+
 	fd = open(EXISTENT_FILE, 0, 0);
-	
 	if (fd < 0)
 		exit(EXIT_FAILURE);
 

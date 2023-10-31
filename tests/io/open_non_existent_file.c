@@ -14,8 +14,6 @@ int main(void)
 
 	fd = open(NON_EXISTENT_FILE, 0, 0);
 	if (fd != -1 || errno != -ENOENT)
-		{ 
-			exit(EXIT_FAILURE);
-		}
+		exit(EXIT_FAILURE);
 	return 0;
 }
