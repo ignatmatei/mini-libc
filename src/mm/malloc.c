@@ -48,7 +48,6 @@ void free(void *ptr)
 	/* TODO: Implement free(). */
     if (!ptr)
         return;
-    exit(0);
     mem_list_del(ptr);
     //munmap(ptr, sizeof(struct mem_list));
 }
